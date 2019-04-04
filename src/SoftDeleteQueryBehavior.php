@@ -163,7 +163,7 @@ class SoftDeleteQueryBehavior extends Behavior
      */
     public function deleted()
     {
-        return $this->addFilterCondition($this->getDeletedCondition());
+        return $this->addFilterCondition(['>', 'deleted_at', '0']);
     }
 
     /**
@@ -172,7 +172,7 @@ class SoftDeleteQueryBehavior extends Behavior
      */
     public function notDeleted()
     {
-        return $this->addFilterCondition($this->getNotDeletedCondition());
+        return $this->addFilterCondition(['=', 'deleted_at', '0']);
     }
 
     /**
@@ -189,7 +189,7 @@ class SoftDeleteQueryBehavior extends Behavior
             return $this->notDeleted();
         }
 
-        if ((int) $deleted) {
+        if ((int)$deleted) {
             return $this->deleted();
         }
 
