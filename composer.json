@@ -1,5 +1,5 @@
 {
-    "name": "liguolin/ar-softdelete",
+    "name": "augusl/ar-softdelete",
     "description": "Provides support for ActiveRecord soft delete in Yii2",
     "keywords": ["yii2", "active", "record", "soft", "smart", "delete", "integrity"],
     "type": "yii2-extension",
